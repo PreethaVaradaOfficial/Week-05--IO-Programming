@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.*;
@@ -49,3 +50,17 @@ public class IPLCensorAnalyzer {
         writer.close();
     }
 }
+=======
+class Student {
+    String id, name;
+    int age, marks;
+    // constructor, toString
+}
+List<Student> students = Files.lines(Paths.get("students.csv"))
+    .skip(1)
+    .map(line -> {
+        String[] s = line.split(",");
+        return new Student(s[0], s[1], Integer.parseInt(s[2]), Integer.parseInt(s[3]));
+    }).collect(Collectors.toList());
+students.forEach(System.out::println);
+>>>>>>> fe81228e1c11f3bcb1b725fb58d562ce87f52814
